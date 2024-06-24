@@ -1,5 +1,6 @@
 #include "funciones.h"
 
+
 int main (int argc, char *argv[]) {
     // {"Numero de Sala", "nombre", "horario", "genero"}
     char peliculas[10][4][40] = {{"1", "Avatar", "10:20", "Fantasia"},
@@ -11,27 +12,23 @@ int main (int argc, char *argv[]) {
                                  {"3", "El Rey Leon", "14:00", "Animacion"},
                                  {"5", "Avengers: Endgame", "16:45", "Accion"},
                                  {"6", "Toy Story 4", "17:30", "Animacion"},
-                                 {"7", "El Señor de los Anillos", "20:00", "Fantasia"}};
+                                 {"7", "El Senor de los Anillos", "20:00", "Fantasia"}};
     // {General, Descuento, Preferencial}
     double precio[3] = {7, 3.5, 3};
     // {"Nombre", "cedula", "edad"}
-    char clientes[5][3][40] = {{"", "", ""},
-                               {"", "", ""},
-                               {"", "", ""},
-                               {"", "", ""},
-                               {"", "", ""}};
+    char clientes[5][3][40] = {{"", "", ""}, {"", "", ""}, {"", "", ""}, {"", "", ""}, {"", "", ""}};
     // {"Cliente", "nombre de pelicula", "precio", "cedula"}
-    int reserva[10][4][40] = {{-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1},
-                              {-1, -1, -1, -1}};
-    
+    int reserva[10][4] = {{-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1},
+                          {-1, -1, -1, -1}};
+ 
     int opcion1 = 0, opcion2 = 0, opcion3 = 0;
     do {
         printf("--Bienvenido al Cine--\n");
