@@ -131,16 +131,30 @@ void comprarTicket(char peliculas[10][4][40], double *precio, char clientes[5][3
 //Caso5
 void verCompras(char peliculas[10][4][40], double *precio, char clientes[5][3][40], int reserva[10][4]) {
     printf("Compras realizadas:\n");
+
+    // Abrir archivo para escritura
+    FILE *archivo;
+    archivo = fopen("reservas.txt", "w");//"w" sobrescribe el archivo
+
     for (int i = 0; i < 10; i++) {
         if (reserva[i][0] != -1) {
             int clienteIdx = reserva[i][0];
             int peliculaIdx = reserva[i][1];
             double costo = reserva[i][2];
             int cedula = reserva[i][3];
+            
+            //imprime en la consola
             printf("Cliente: %s\n", clientes[clienteIdx][0]);
             printf("Cedula: %d\n", cedula);
             printf("Pelicula: %s\n", peliculas[peliculaIdx][1]);
             printf("Costo: %.2f\n\n", costo);
-        }
-    }
+
+            //Guarda en el archivo
+            fprintf(archivo, "Cliente: %s\n", clientes[clienteIdx][0]);
+            fprintf(archivo, "Cedula: %d\n", cedula);
+            fprintf(archivo, "Pelicula: %s\n", peliculas[peliculaIdx][1]);
+            fprintf(archivo, "Costo: %.2f\n\n", costo);
+        }}
+    fclose(archivo);
+    printf("Los datos de las reservas se han guardado en el archivo 'reservas.txt'.\n");
 }
