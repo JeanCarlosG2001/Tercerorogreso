@@ -52,7 +52,9 @@ void listarPeliculas(char peliculas[10][4][40]) {
 void buscarporNombre(char peliculas[10][4][40]) {
     char nombre[40];
     printf("Ingrese el nombre de la pelicula: ");
-    scanf("%39s", nombre);
+    getchar();
+    fgets(nombre, 40, stdin); //leer
+
     for (int i = 0; i < 10; i++) {
         if (strcmp(peliculas[i][1], nombre) == 0) {
             printf("Sala\tNombre\tDuracion\tGenero\n");
@@ -95,6 +97,8 @@ void comprarTicket(char peliculas[10][4][40], double *precio, char clientes[5][3
             char nombre[40];
             printf("Ingrese el nombre de la pelicula: ");
             scanf("%39s", nombre);
+            getchar(); 
+            fgets(nombre, 40, stdin);
             for (int j = 0; j < 10; j++) {
                 if (strcmp(peliculas[j][1], nombre) == 0) {
                     printf("Pelicula encontrada: %s\n", peliculas[j][1]);
@@ -158,3 +162,4 @@ void verCompras(char peliculas[10][4][40], double *precio, char clientes[5][3][4
     fclose(archivo);
     printf("Los datos de las reservas se han guardado en el archivo 'reservas.txt'.\n");
 }
+
